@@ -1,15 +1,11 @@
 import torch
-from numba import cuda
-import time
 from diffusers import StableDiffusionPipeline
-#from diffusers import StableDiffusionDepth2ImgPipeline
 
 pipe = StableDiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5", torch_dtype=torch.float16)
 pipe = pipe.to("cuda")
 
-prompt = "modular architectural facade with windows in"
-my_image = pipe(prompt).images[0]
-my_image.save("output.png")
+prompt = "a photo of an astronaut riding a horse on mars"
+image = pipe(prompt).images[0]  
 
 
 """

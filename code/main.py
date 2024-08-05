@@ -22,10 +22,10 @@ screenshot = pyscreenshot.grab(bbox=(10, 10, 500, 500))
 #image.show()
 
 # Save the screenshot
-screenshot.save("screenshot.png")
+screenshot.save("data/screenshots/screenshot.png")
 
 # Use screenshot in pipeline
-images = ["sketch.png"]
+images = ["data/sketch.png"]
 init_images = [Image.open(image).convert("RGB").resize((512,512)) for image in images]
 
 # Set the diffusion model
@@ -34,11 +34,11 @@ model_id = "stabilityai/stable-diffusion-2"
 #model_id = "runwayml/stable-diffusion-inpainting"
 
 # Set prompt to guide image towards
-prompts = ["architecture, render, raytracing, arcane, detail, futuristic"]
+prompts = ["architecture, painting, impressionist, stylized, colourful, high detail"]
 #prompts = ["window, Modern Facade, Front View, Architectural, frontal, pin up, texture, seamless"]
 
 # Set prompt to guide image away from
-negative_prompts = ["blurry"]
+negative_prompts = ["sketch, hand, blurry"]
 
 # Image2image pipeline
 
