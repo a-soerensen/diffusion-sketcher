@@ -25,7 +25,7 @@ screenshot = pyscreenshot.grab(bbox=(10, 10, 500, 500))
 screenshot.save("data/screenshots/screenshot.png")
 
 # Use screenshot in pipeline
-images = ["data/sketch.png"]
+images = ["data/sketch.jpg"]
 init_images = [Image.open(image).convert("RGB").resize((512,512)) for image in images]
 
 # Set the diffusion model
